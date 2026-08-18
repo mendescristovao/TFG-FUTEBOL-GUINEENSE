@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TFG - Futebol Guineense</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f5f7;
+  color: #17202a;
+  padding-bottom: 75px;
+}
+
+header {
+  background: #087f3f;
+  color: white;
+  padding: 22px 18px 26px;
+  border-radius: 0 0 24px 24px;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.sub {
+  margin-top: 5px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tab {
+  padding: 9px 14px;
+  background: #ffffff30;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+main {
+  padding: 16px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0 12px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 12px #00000015;
+}
+
+.status {
+  text-align: center;
+  color: #087f3f;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.match {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team {
+  text-align: center;
+  width: 38%;
+  font-weight: bold;
+}
+
+.badge {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e7f5ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto auto 7px;
+  font-size: 23px;
+}
+
+.score {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.rank {
+  width: 25px;
+  font-weight: bold;
+}
+
+.club {
+  flex: 1;
+}
+
+.points {
+  font-weight: bold;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 9px 4px;
+}
+
+nav div {
+  text-align: center;
+  color: #69727a;
+  font-size: 11px;
+}
+
+nav .active {
+  color: #087f3f;
+  font-weight: bold;
+}
+
+.ico {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">⚽ TFG</div>
+  <div class="sub">Tudo Sobre Futebol Guineense 🇬🇼</div>
+
+  <div class="tabs">
+    <div class="tab">Hoje</div>
+    <div class="tab">Amanhã</div>
+    <div class="tab">Resultados</div>
+  </div>
+</header>
+
+<main>
+
+<div class="title">🔥 Jogo em destaque</div>
+
+<section class="card">
+  <div class="status">PRÓXIMO JOGO • 16:00</div>
+
+  <div class="match">
+    <div class="team">
+      <div class="badge">⚽</div>
+      FC Canchungo
+    </div>
+
+    <div class="score">VS</div>
+
+    <div class="team">
+      <div class="badge">⚽</div>
+      Portos de Bissau
+    </div>
+  </div>
+</section>
+
+<div class="title">🏆 Classificação</div>
+
+<section class="card">
+
+<div class="row">
+  <span class="rank">1</span>
+  <span class="club">FC Canchungo</span>
+  <span class="points">60 pts</span>
+</div>
+
+<div class="row">
+  <span class="rank">2</span>
+  <span class="club">Cupelum FC</span>
+  <span class="points">58 pts</span>
+</div>
+
+<div class="row">
+  <span class="rank">3</span>
+  <span class="club">Portos de Bissau</span>
+  <span class="points">56 pts</span>
+</div>
+
+<div class="row">
+  <span class="rank">4</span>
+  <span class="club">CDR Gabú</span>
+  <span class="points">51 pts</span>
+</div>
+
+<div class="row">
+  <span class="rank">5</span>
+  <span class="club">Benfica de Bissau</span>
+  <span class="points">43 pts</span>
+</div>
+
+<div class="row">
+  <span class="rank">6</span>
+  <span class="club">Massaf SC</span>
+  <span class="points">42 pts</span>
+</div>
+
+<div class="row">
+  <span class="rank">7</span>
+  <span class="club">Hafia FC</span>
+  <span class="points">37 pts</span>
+</div>
+
+<div class="row">
+  <span class="rank">8</span>
+  <span class="club">Sporting da Guiné-Bissau</span>
+  <span class="points">36 pts</span>
+</div>
+
+</section>
+
+<div class="title">📢 Últimos resultados</div>
+
+<section class="card">
+
+<div class="row">
+  <span>FC Canchungo</span>
+  <strong>2–1</strong>
+  <span>Portos de Bissau</span>
+</div>
+
+<div class="row">
+  <span>Benfica de Bissau</span>
+  <strong>1–0</strong>
+  <span>CDR Gabú</span>
+</div>
+
+</section>
+
+</main>
+
+<nav>
+  <div class="active">
+    <span class="ico">🏠</span>
+    Início
+  </div>
+
+  <div>
+    <span class="ico">🏆</span>
+    Campeonato
+  </div>
+
+  <div>
+    <span class="ico">⚽</span>
+    Jogos
+  </div>
+
+  <div>
+    <span class="ico">👤</span>
+    Jogadores
+  </div>
+
+  <div>
+    <span class="ico">📊</span>
+    Estatísticas
+  </div>
+</nav>
+
+</body>
+  </html>
