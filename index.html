@@ -1,74 +1,54 @@
-<!doctype html><html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TFG — Tudo Sobre Futebol Guineense</title>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TFG PRO 3.0</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f2f5f3;color:#17201a;padding-bottom:76px}
-header{background:linear-gradient(135deg,#087b3d,#0a5f35);color:white;padding:20px 16px;border-radius:0 0 24px 24px}
-.logo{font-size:28px;font-weight:900}.sub{margin-top:4px;opacity:.9}.pill{display:inline-block;margin-top:12px;padding:7px 11px;border-radius:20px;background:#ffffff20;font-size:12px}
-main{padding:15px}.screen{display:none}.screen.active{display:block}h2{font-size:20px}
-.card{background:white;border-radius:17px;padding:15px;margin:12px 0;box-shadow:0 3px 12px #0000000d}
-.hero{background:#087b3d;color:white}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:white;border-radius:14px;padding:13px;text-align:center}.stat b{display:block;font-size:22px;color:#087b3d}
-.club{background:white;border-radius:15px;margin:9px 0;padding:10px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px #0000000b;cursor:pointer}
-.crest{width:58px;height:58px;display:flex;align-items:center;justify-content:center;flex:none}.crest img{max-width:56px;max-height:56px;object-fit:contain}.no-logo{width:50px;height:50px;border-radius:50%;background:#e9f5ed;display:flex;align-items:center;justify-content:center;font-size:23px}
-.clubinfo b{display:block;font-size:14px}.clubinfo span,.clubinfo small{display:block;color:#68736d;margin-top:3px;font-size:11px}
-table{width:100%;border-collapse:collapse;font-size:11px;min-width:650px}th,td{padding:8px 5px;border-bottom:1px solid #e8ece9;text-align:center}th{color:#087b3d;background:#eef8f1}td:nth-child(2){text-align:left;font-weight:bold}.scroll{overflow-x:auto}
-.nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #ddd;display:flex;justify-content:space-around;padding:7px 2px;z-index:5}.nav button{border:0;background:none;color:#66716b;font-size:10px}.nav button.active{color:#087b3d;font-weight:bold}.nav span{display:block;font-size:19px;margin-bottom:2px}
-.back{border:0;background:#e9f5ed;color:#087b3d;border-radius:12px;padding:9px 12px;font-weight:bold}
-.detail{text-align:center}.detail .bigcrest{height:105px;max-width:105px;object-fit:contain}.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.fact{background:#f5faf6;padding:11px;border-radius:11px}.fact b{display:block;color:#087b3d;font-size:19px}
-.note{font-size:11px;color:#68736d;line-height:1.5}
-</style></head><body>
-<header><div class="logo">⚽ TFG</div><div class="sub">Tudo Sobre Futebol Guineense 🇬🇼</div><div class="pill">1ª DIVISÃO • 2025/26</div></header>
-<main>
-<section id="home" class="screen active"><h2>Início</h2>
-<div class="card hero"><h2>🏆 FC Canchungo</h2><p>Campeão Nacional 2025/26</p><b>63 pontos • 19 vitórias</b></div>
-<div class="grid"><div class="stat"><b>16</b>clubes</div><div class="stat"><b>240</b>jogos</div><div class="stat"><b>20</b>golos — Alimo Djaló</div><div class="stat"><b>63</b>pontos — campeão</div></div>
-<div class="card"><b>👑 Artilheiros</b><p>1. Alimo Djaló — Háfia FC: <b>20</b></p><p>2. Ahamed Camará — FC Canchungo: <b>16</b></p><p>3. Abubacar Soumah — Massaf SC: <b>16</b></p><p>4. Carlinhos José Luciano — Cupelum FC: <b>14</b></p></div>
-<div class="card"><b>🇬🇼 FFGB</b><p>Federação de Futebol da Guiné-Bissau. Organiza 1ª Divisão, 2ª Divisão, Taça, futebol feminino, juniores e juvenis.</p></div>
-</section>
-<section id="league" class="screen"><h2>🏆 Classificação</h2><div class="card scroll"><table><thead><tr><th>#</th><th>Clube</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GM</th><th>GS</th><th>SG</th><th>PTS</th></tr></thead><tbody>
-<tr><td>1</td><td>FC Canchungo</td><td>30</td><td>19</td><td>6</td><td>5</td><td>41</td><td>17</td><td>+24</td><td><b>63</b></td></tr><tr><td>2</td><td>Sport Clube dos Portos de Bissau</td><td>30</td><td>18</td><td>5</td><td>7</td><td>47</td><td>27</td><td>+20</td><td><b>59</b></td></tr><tr><td>3</td><td>Cupelum FC</td><td>30</td><td>17</td><td>7</td><td>6</td><td>43</td><td>27</td><td>+16</td><td><b>58</b></td></tr><tr><td>4</td><td>CDR Gabú</td><td>30</td><td>14</td><td>9</td><td>7</td><td>30</td><td>18</td><td>+12</td><td><b>51</b></td></tr><tr><td>5</td><td>Sport Bissau e Benfica</td><td>30</td><td>12</td><td>10</td><td>8</td><td>35</td><td>22</td><td>+13</td><td><b>46</b></td></tr><tr><td>6</td><td>Massaf SC</td><td>30</td><td>12</td><td>7</td><td>11</td><td>41</td><td>36</td><td>+5</td><td><b>43</b></td></tr><tr><td>7</td><td>Sporting da Guiné-Bissau</td><td>30</td><td>11</td><td>6</td><td>13</td><td>24</td><td>28</td><td>-4</td><td><b>39</b></td></tr><tr><td>8</td><td>UDIB</td><td>30</td><td>9</td><td>11</td><td>10</td><td>38</td><td>32</td><td>+6</td><td><b>38</b></td></tr><tr><td>9</td><td>Háfia FC</td><td>30</td><td>9</td><td>10</td><td>11</td><td>44</td><td>39</td><td>+5</td><td><b>37</b></td></tr><tr><td>10</td><td>FC Cumura</td><td>30</td><td>8</td><td>10</td><td>12</td><td>30</td><td>31</td><td>-1</td><td><b>34</b></td></tr><tr><td>11</td><td>Arado de Nhacra</td><td>30</td><td>9</td><td>7</td><td>14</td><td>27</td><td>40</td><td>-13</td><td><b>34</b></td></tr><tr><td>12</td><td>FC Pelundo</td><td>30</td><td>7</td><td>13</td><td>10</td><td>27</td><td>36</td><td>-9</td><td><b>34</b></td></tr><tr><td>13</td><td>Os Balantas de Mansôa</td><td>30</td><td>7</td><td>11</td><td>12</td><td>29</td><td>42</td><td>-13</td><td><b>32</b></td></tr><tr><td>14</td><td>FC Cuntum</td><td>30</td><td>8</td><td>7</td><td>15</td><td>33</td><td>40</td><td>-7</td><td><b>31</b></td></tr><tr><td>15</td><td>Flamengo de Pefine</td><td>30</td><td>7</td><td>8</td><td>15</td><td>27</td><td>42</td><td>-15</td><td><b>29</b></td></tr><tr><td>16</td><td>FC Tigre de Fronteira</td><td>30</td><td>7</td><td>5</td><td>18</td><td>17</td><td>56</td><td>-39</td><td><b>26</b></td></tr>
-</tbody></table></div><p class="note">Fonte estatística: RSSSF, temporada 2025/26. J=jogos; GM=golos marcados; GS=golos sofridos; SG=saldo.</p></section>
-<section id="clubs" class="screen"><h2>👥 Clubes</h2><p class="note">Toque num clube para abrir o perfil.</p><article class="club" onclick="openClub(1)">
-      <div class="crest"><img src="https://images.seeklogo.com/logo-png/63/1/futebol-clube-de-canchungo-logo-png_seeklogo-635048.png" alt="Logo de FC Canchungo"></div><div class="clubinfo"><b>1. FC Canchungo</b><span>Canchungo</span><small>63 pts • 19V 6E 5D • SG +24</small></div>
-    </article><article class="club" onclick="openClub(2)">
-      <div class="crest"><img src="https://images.seeklogo.com/logo-png/63/1/sport-clube-dos-portos-de-bissau-logo-png_seeklogo-635040.png" alt="Logo de Sport Clube dos Portos de Bissau"></div><div class="clubinfo"><b>2. Sport Clube dos Portos de Bissau</b><span>Bissau</span><small>59 pts • 18V 5E 7D • SG +20</small></div>
-    </article><article class="club" onclick="openClub(3)">
-      <div class="crest"><img src="https://www.zerozero.pt/img/logos/equipas/16/99116_logo_cupelum_fc_20260219162825.jpg" alt="Logo de Cupelum FC"></div><div class="clubinfo"><b>3. Cupelum FC</b><span>Cupelum de Cima</span><small>58 pts • 17V 7E 6D • SG +16</small></div>
-    </article><article class="club" onclick="openClub(4)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>4. CDR Gabú</b><span>Gabú</span><small>51 pts • 14V 9E 7D • SG +12</small></div>
-    </article><article class="club" onclick="openClub(5)">
-      <div class="crest"><img src="https://images.seeklogo.com/logo-png/63/1/sport-bissau-e-benfica-logo-png_seeklogo-635035.png" alt="Logo de Sport Bissau e Benfica"></div><div class="clubinfo"><b>5. Sport Bissau e Benfica</b><span>Bissau</span><small>46 pts • 12V 10E 8D • SG +13</small></div>
-    </article><article class="club" onclick="openClub(6)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>6. Massaf SC</b><span>Cacine</span><small>43 pts • 12V 7E 11D • SG +5</small></div>
-    </article><article class="club" onclick="openClub(7)">
-      <div class="crest"><img src="https://images.seeklogo.com/logo-png/63/1/sporting-club-guine-bissau-logo-png_seeklogo-635039.png" alt="Logo de Sporting da Guiné-Bissau"></div><div class="clubinfo"><b>7. Sporting da Guiné-Bissau</b><span>Bissau</span><small>39 pts • 11V 6E 13D • SG -4</small></div>
-    </article><article class="club" onclick="openClub(8)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>8. UDIB</b><span>Bissau</span><small>38 pts • 9V 11E 10D • SG +6</small></div>
-    </article><article class="club" onclick="openClub(9)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>9. Háfia FC</b><span>Bafatá</span><small>37 pts • 9V 10E 11D • SG +5</small></div>
-    </article><article class="club" onclick="openClub(10)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>10. FC Cumura</b><span>Cumura</span><small>34 pts • 8V 10E 12D • SG -1</small></div>
-    </article><article class="club" onclick="openClub(11)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>11. Arado de Nhacra</b><span>Nhacra</span><small>34 pts • 9V 7E 14D • SG -13</small></div>
-    </article><article class="club" onclick="openClub(12)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>12. FC Pelundo</b><span>Pelundo</span><small>34 pts • 7V 13E 10D • SG -9</small></div>
-    </article><article class="club" onclick="openClub(13)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>13. Os Balantas de Mansôa</b><span>Mansôa</span><small>32 pts • 7V 11E 12D • SG -13</small></div>
-    </article><article class="club" onclick="openClub(14)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>14. FC Cuntum</b><span>Cuntum</span><small>31 pts • 8V 7E 15D • SG -7</small></div>
-    </article><article class="club" onclick="openClub(15)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>15. Flamengo de Pefine</b><span>Pefine</span><small>29 pts • 7V 8E 15D • SG -15</small></div>
-    </article><article class="club" onclick="openClub(16)">
-      <div class="crest"><div class="no-logo">⚽</div></div><div class="clubinfo"><b>16. FC Tigre de Fronteira</b><span>São Domingos</span><small>26 pts • 7V 5E 18D • SG -39</small></div>
-    </article></section>
-<section id="history" class="screen"><h2>📚 História</h2><div class="card"><b>Campeões recentes</b><p>2026 — FC Canchungo</p><p>2025 — Sport Bissau e Benfica</p><p>2024 — Sport Bissau e Benfica</p><p>2023 — FC Canchungo</p><p>2022 — Sport Bissau e Benfica</p><p>2021 — Sporting Clube de Bissau</p><p>2019 — UDIB</p></div><div class="card"><b>Mais títulos desde a independência</b><p>Sport Bissau e Benfica — 15</p><p>Sporting Clube de Bissau — 14</p><p>Os Balantas de Mansôa — 4</p><p>UDIB — 4</p></div></section>
-<section id="cup" class="screen"><h2>🏆 Taça Nacional</h2><div class="card"><b>Competições da Taça</b><p>O TFG terá a árvore completa da Taça, com resultados por fase e campeões.</p><p>2025 — FC Pelundo venceu o GDR Quelelé por 4–1.</p></div></section>
-<section id="detail" class="screen"></section>
-</main>
-<nav class="nav"><button class="active" data-s="home"><span>🏠</span>Início</button><button data-s="league"><span>🏆</span>Liga</button><button data-s="clubs"><span>👥</span>Clubes</button><button data-s="cup"><span>🥇</span>Taça</button><button data-s="history"><span>📚</span>História</button></nav>
-<script>
-const clubs=[];clubs[1]={nome:"FC Canchungo",cidade:"Canchungo",pts:63,j:30,v:19,e:6,d:5,gm:41,gs:17,sg:24,logo:"https://images.seeklogo.com/logo-png/63/1/futebol-clube-de-canchungo-logo-png_seeklogo-635048.png"};clubs[2]={nome:"Sport Clube dos Portos de Bissau",cidade:"Bissau",pts:59,j:30,v:18,e:5,d:7,gm:47,gs:27,sg:20,logo:"https://images.seeklogo.com/logo-png/63/1/sport-clube-dos-portos-de-bissau-logo-png_seeklogo-635040.png"};clubs[3]={nome:"Cupelum FC",cidade:"Cupelum de Cima",pts:58,j:30,v:17,e:7,d:6,gm:43,gs:27,sg:16,logo:"https://www.zerozero.pt/img/logos/equipas/16/99116_logo_cupelum_fc_20260219162825.jpg"};clubs[4]={nome:"CDR Gabú",cidade:"Gabú",pts:51,j:30,v:14,e:9,d:7,gm:30,gs:18,sg:12,logo:""};clubs[5]={nome:"Sport Bissau e Benfica",cidade:"Bissau",pts:46,j:30,v:12,e:10,d:8,gm:35,gs:22,sg:13,logo:"https://images.seeklogo.com/logo-png/63/1/sport-bissau-e-benfica-logo-png_seeklogo-635035.png"};clubs[6]={nome:"Massaf SC",cidade:"Cacine",pts:43,j:30,v:12,e:7,d:11,gm:41,gs:36,sg:5,logo:""};clubs[7]={nome:"Sporting da Guiné-Bissau",cidade:"Bissau",pts:39,j:30,v:11,e:6,d:13,gm:24,gs:28,sg:-4,logo:"https://images.seeklogo.com/logo-png/63/1/sporting-club-guine-bissau-logo-png_seeklogo-635039.png"};clubs[8]={nome:"UDIB",cidade:"Bissau",pts:38,j:30,v:9,e:11,d:10,gm:38,gs:32,sg:6,logo:""};clubs[9]={nome:"Háfia FC",cidade:"Bafatá",pts:37,j:30,v:9,e:10,d:11,gm:44,gs:39,sg:5,logo:""};clubs[10]={nome:"FC Cumura",cidade:"Cumura",pts:34,j:30,v:8,e:10,d:12,gm:30,gs:31,sg:-1,logo:""};clubs[11]={nome:"Arado de Nhacra",cidade:"Nhacra",pts:34,j:30,v:9,e:7,d:14,gm:27,gs:40,sg:-13,logo:""};clubs[12]={nome:"FC Pelundo",cidade:"Pelundo",pts:34,j:30,v:7,e:13,d:10,gm:27,gs:36,sg:-9,logo:""};clubs[13]={nome:"Os Balantas de Mansôa",cidade:"Mansôa",pts:32,j:30,v:7,e:11,d:12,gm:29,gs:42,sg:-13,logo:""};clubs[14]={nome:"FC Cuntum",cidade:"Cuntum",pts:31,j:30,v:8,e:7,d:15,gm:33,gs:40,sg:-7,logo:""};clubs[15]={nome:"Flamengo de Pefine",cidade:"Pefine",pts:29,j:30,v:7,e:8,d:15,gm:27,gs:42,sg:-15,logo:""};clubs[16]={nome:"FC Tigre de Fronteira",cidade:"São Domingos",pts:26,j:30,v:7,e:5,d:18,gm:17,gs:56,sg:-39,logo:""};
-const nav=document.querySelectorAll('.nav button'), screens=document.querySelectorAll('.screen');
-nav.forEach(b=>b.onclick=()=>show(b.dataset.s));
-function show(id){screens.forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');nav.forEach(x=>x.classList.toggle('active',x.dataset.s===id));window.scrollTo(0,0)}
-function openClub(i){let c=clubs[i];let logo=c.logo?`<img class="bigcrest" src="${c.logo}" alt="Logo">`:`<div class="no-logo" style="margin:auto">⚽</div>`;document.getElementById('detail').innerHTML=`<button class="back" onclick="show('clubs')">← Voltar</button><div class="card detail">${logo}<h2>${c.nome}</h2><p>${c.cidade} • 2025/26</p><div class="facts"><div class="fact"><b>${c.pts}</b>pontos</div><div class="fact"><b>${c.j}</b>jogos</div><div class="fact"><b>${c.v}</b>vitórias</div><div class="fact"><b>${c.e}</b>empates</div><div class="fact"><b>${c.d}</b>derrotas</div><div class="fact"><b>${c.gm}</b>GM</div><div class="fact"><b>${c.gs}</b>GS</div><div class="fact"><b>${c.sg>0?'+':''}${c.sg}</b>SG</div></div></div><div class="card"><b>📌 Perfil do clube</b><p>Esta página está preparada para receber estádio, fundação, treinador, plantel, títulos, últimos jogos e próximos jogos.</p></div>`;show('detail')}
-</script></body></html>
+body{margin:0;font-family:Arial;background:#f2f5f3}
+header{background:#087f3f;color:white;padding:20px}
+.card{background:white;margin:12px;padding:15px;border-radius:12px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;border-bottom:1px solid #ddd}
+.menu{position:fixed;bottom:0;left:0;right:0;background:#087f3f;color:white;display:flex;justify-content:space-around;padding:10px}
+</style>
+</head>
+<body>
+<header>
+<h1>⚽ TFG PRO 3.0</h1>
+<p>Tudo Sobre Futebol Guineense 🇬🇼</p>
+</header>
+<div class="card">
+<h2>🏆 Classificação 2025/26</h2>
+<table>
+<tr><th>#</th><th>Clube</th><th>PTS</th></tr>
+<tr><td>1</td><td>FC Canchungo</td><td>63</td></tr>
+<tr><td>2</td><td>Portos de Bissau</td><td>59</td></tr>
+<tr><td>3</td><td>Cupelum FC</td><td>58</td></tr>
+<tr><td>4</td><td>CDR Gabú</td><td>51</td></tr>
+<tr><td>5</td><td>Benfica de Bissau</td><td>46</td></tr>
+</table>
+</div>
+<div class="card">
+<h2>👥 Clubes</h2>
+<ul>
+<li>FC Canchungo</li>
+<li>Portos de Bissau</li>
+<li>Cupelum FC</li>
+<li>Benfica de Bissau</li>
+<li>Sporting da Guiné-Bissau</li>
+<li>UDIB</li>
+<li>Háfia FC</li>
+<li>Massaf SC</li>
+<li>FC Cumura</li>
+<li>Os Balantas</li>
+</ul>
+</div>
+<div class="menu">
+<span>🏠 Início</span>
+<span>🏆 Liga</span>
+<span>👥 Clubes</span>
+<span>⚽ Jogos</span>
+</div>
+</body>
+</html>
