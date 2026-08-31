@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TFG PRO 8.2 — Futebol Guineense</title>
+
+<style>
+*{
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f1f5f3;
+color:#17201b;
+padding-bottom:70px;
+}
+
+header{
+background:linear-gradient(135deg,#087f3f,#045a2d);
+color:white;
+padding:20px 15px 25px;
+text-align:center;
+}
+
+.logo{
+width:70px;
+height:70px;
+margin:auto;
+border-radius:50%;
+background:white;
+color:#087f3f;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+}
+
+header h1{
+margin:10px 0 4px;
+}
+
+header p{
+margin:5px;
+}
+
+.topbar{
+background:white;
+padding:10px;
+display:flex;
+gap:8px;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+
+.menu-btn{
+width:48px;
+border:0;
+background:#087f3f;
+color:white;
+border-radius:10px;
+font-size:22px;
+}
+
+.search{
+flex:1;
+border:1px solid #ddd;
+border-radius:25px;
+padding:12px 15px;
+font-size:15px;
+outline:none;
+}
+
+main{
+max-width:1000px;
+margin:auto;
+padding:10px;
+}
+
+.card{
+background:white;
+margin:12px 0;
+padding:17px;
+border-radius:16px;
+box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.card h2{
+color:#075d31;
+margin-top:0;
+}
+
+/* MENU */
+
+.overlay{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+z-index:300;
+}
+
+.side-menu{
+position:fixed;
+top:0;
+left:-310px;
+width:290px;
+height:100%;
+background:white;
+z-index:400;
+overflow-y:auto;
+transition:.3s;
+}
+
+.side-menu.open{
+left:0;
+}
+
+.menu-header{
+background:#087f3f;
+color:white;
+padding:25px 18px;
+}
+
+.menu-close{
+float:right;
+background:none;
+border:0;
+color:white;
+font-size:27px;
+}
+
+.menu-title{
+padding:13px 17px;
+font-weight:bold;
+font-size:13px;
+color:#087f3f;
+}
+
+.menu-link{
+display:block;
+padding:12px 20px;
+text-decoration:none;
+color:#333;
+}
+
+.menu-link:hover{
+background:#edf8f1;
+color:#087f3f;
+}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(135deg,#087f3f,#056332);
+color:white;
+padding:22px;
+border-radius:18px;
+}
+
+.hero h2{
+color:white;
+}
+
+/* ATALHOS */
+
+.quick-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
+}
+
+.quick{
+background:#f7faf8;
+border:1px solid #e2e9e4;
+border-radius:13px;
+padding:13px 5px;
+text-align:center;
+text-decoration:none;
+color:#333;
+}
+
+.quick span{
+display:block;
+font-size:25px;
+margin-bottom:5px;
+}
+
+/* CLUBES */
+
+.club-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:12px;
+}
+
+.club{
+background:#f8faf9;
+border:1px solid #e1e9e4;
+padding:15px;
+border-radius:15px;
+cursor:pointer;
+transition:.2s;
+}
+
+.club:hover{
+transform:translateY(-3px);
+box-shadow:0 6px 16px rgba(0,0,0,.1);
+}
+
+.club-logo{
+width:58px;
+height:58px;
+border-radius:50%;
+background:white;
+border:2px solid #087f3f;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:27px;
+margin-bottom:9px;
+}
+
+.club h3{
+margin:5px 0;
+}
+
+.club small{
+color:#66736b;
+}
+
+/* PERFIL */
+
+.profile{
+display:none;
+}
+
+.profile-header{
+background:linear-gradient(135deg,#087f3f,#045a2d);
+color:white;
+padding:22px;
+border-radius:17px;
+text-align:center;
+}
+
+.profile-logo{
+width:100px;
+height:100px;
+border-radius:50%;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:50px;
+margin:auto;
+}
+
+.profile-header h2{
+color:white;
+font-size:26px;
+}
+
+.back{
+background:white;
+color:#087f3f;
+border:0;
+padding:10px 16px;
+border-radius:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.profile-stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:12px;
+}
+
+.profile-stat{
+background:#f7faf8;
+padding:15px;
+border-radius:12px;
+text-align:center;
+}
+
+.profile-stat strong{
+display:block;
+font-size:22px;
+color:#087f3f;
+margin-bottom:5px;
+}
+
+.info-row{
+display:flex;
+justify-content:space-between;
+padding:12px 4px;
+border-bottom:1px solid #eee;
+}
+
+.info-row strong{
+color:#087f3f;
+}
+
+.squad{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:9px;
+}
+
+.player{
+background:#f7faf8;
+padding:12px;
+border-radius:10px;
+}
+
+.player-number{
+font-size:20px;
+font-weight:bold;
+color:#087f3f;
+}
+
+/* TABELA */
+
+.table-wrap{
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:500px;
+}
+
+th{
+background:#087f3f;
+color:white;
+}
+
+th,td{
+padding:10px;
+border-bottom:1px solid #eee;
+}
+
+/* JOGOS */
+
+.match{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 5px;
+border-bottom:1px solid #eee;
+}
+
+.team{
+width:38%;
+text-align:center;
+font-weight:bold;
+}
+
+.score{
+font-weight:bold;
+color:#087f3f;
+}
+
+/* NOTÍCIAS */
+
+.news-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:10px;
+}
+
+.news{
+border:1px solid #eee;
+border-radius:13px;
+overflow:hidden;
+}
+
+.news-img{
+height:100px;
+background:#087f3f;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:38px;
+}
+
+.news-content{
+padding:13px;
+}
+
+/* BOTÕES */
+
+.btn{
+background:#087f3f;
+color:white;
+border:0;
+padding:11px 15px;
+border-radius:9px;
+cursor:pointer;
+}
+
+.btn-light{
+background:#e7f5ed;
+color:#087f3f;
+}
+
+/* NAVEGAÇÃO INFERIOR */
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:65px;
+background:white;
+border-top:1px solid #ddd;
+display:flex;
+justify-content:space-around;
+align-items:center;
+z-index:200;
+}
+
+.bottom-nav a{
+text-decoration:none;
+color:#68746d;
+text-align:center;
+font-size:11px;
+}
+
+.bottom-nav span{
+display:block;
+font-size:22px;
+}
+
+.bottom-nav a.active{
+color:#087f3f;
+font-weight:bold;
+}
+
+footer{
+background:#063d2c;
+color:white;
+text-align:center;
+padding:25px 15px;
+margin-top:20px;
+}
+
+footer p{
+color:#d8eee1;
+}
+
+.hidden{
+display:none!important;
+}
+
+@media(max-width:600px){
+
+.quick-grid{
+grid-template-columns:repeat(4,1fr);
+}
+
+.quick{
+font-size:11px;
+}
+
+.quick span{
+font-size:21px;
+}
+
+.club-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.club{
+padding:11px;
+}
+
+.club h3{
+font-size:14px;
+}
+
+.profile-stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">⚽</div>
+
+<h1>TFG PRO 8.2</h1>
+
+<p><strong>Tudo Sobre Futebol Guineense 🇬🇼</strong></p>
+
+<p>Fundador e Diretor: Cristóvão Mendes</p>
+
+</header>
+
+
+<div class="topbar">
+
+<button class="menu-btn" onclick="openMenu()">☰</button>
+
+<input
+id="search"
+class="search"
+type="search"
+placeholder="🔎 Procurar clube..."
+oninput="searchClubs()">
+
+</div>
+
+
+<!-- MENU -->
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<div class="side-menu" id="sideMenu">
+
+<div class="menu-header">
+
+<button class="menu-close" onclick="closeMenu()">×</button>
+
+<h2>⚽ TFG PRO</h2>
+
+<p>Menu principal</p>
+
+</div>
+
+<div class="menu-title">PRINCIPAL</div>
+
+<a class="menu-link" href="#inicio" onclick="closeMenu()">🏠 Início</a>
+
+<div class="menu-title">COMPETIÇÕES</div>
+
+<a class="menu-link" href="#liga" onclick="closeMenu()">🏆 Liga Nacional</a>
+
+<a class="menu-link" href="#jogos" onclick="closeMenu()">🏅 Taça Nacional</a>
+
+<div class="menu-title">FUTEBOL</div>
+
+<a class="menu-link" href="#clubes" onclick="closeMenu()">👥 Clubes</a>
+
+<a class="menu-link" href="#jogos" onclick="closeMenu()">⚽ Jogos</a>
+
+<a class="menu-link" href="#artilheiros" onclick="closeMenu()">👑 Artilheiros</a>
+
+<div class="menu-title">INFORMAÇÃO</div>
+
+<a class="menu-link" href="#noticias" onclick="closeMenu()">📰 Notícias</a>
+
+<a class="menu-link" href="#historia" onclick="closeMenu()">📚 História</a>
+
+<a class="menu-link" href="#sobre" onclick="closeMenu()">ℹ️ Sobre</a>
+
+</div>
+
+
+<main>
+
+<!-- INÍCIO -->
+
+<section id="inicio">
+
+<div class="hero">
+
+<p>🇬🇼 FUTEBOL DA GUINÉ-BISSAU</p>
+
+<h2>Bem-vindo ao TFG PRO</h2>
+
+<p>
+Acompanha clubes, jogos, classificação,
+jogadores, notícias e história do futebol guineense.
+</p>
+
+<a href="#clubes">
+
+<button class="back">
+👥 Ver clubes
+</button>
+
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h2>⚡ Acesso rápido</h2>
+
+<div class="quick-grid">
+
+<a class="quick" href="#liga">
+<span>🏆</span>
+Liga
+</a>
+
+<a class="quick" href="#jogos">
+<span>⚽</span>
+Jogos
+</a>
+
+<a class="quick" href="#clubes">
+<span>👥</span>
+Clubes
+</a>
+
+<a class="quick" href="#noticias">
+<span>📰</span>
+Notícias
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LIGA -->
+
+<section id="liga">
+
+<div class="card">
+
+<h2>🏆 Liga Guineense 2025/26</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>#</th>
+<th>Clube</th>
+<th>PTS</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>FC Canchungo</td>
+<td>63</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Portos de Bissau</td>
+<td>59</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Cupelum FC</td>
+<td>58</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>CDR Gabú</td>
+<td>51</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Sport Bissau e Benfica</td>
+<td>46</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Massaf SC</td>
+<td>43</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Sporting da Guiné-Bissau</td>
+<td>39</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>UDIB</td>
+<td>38</td>
+</tr>
+
+</table>
+
+</div>
+
+<p>
+<small>⚠️ Dados de exemplo/base do projeto. Confirmar antes de publicar como oficiais.</small>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CLUBES -->
+
+<section id="clubes">
+
+<div class="card">
+
+<h2>👥 Clubes da Liga</h2>
+
+<p>
+Toque em qualquer clube para abrir o seu perfil.
+</p>
+
+<div class="club-grid" id="clubList">
+
+<div class="club" data-name="FC Canchungo" onclick="openProfile('FC Canchungo','⚽','Canchungo')">
+<div class="club-logo">⚽</div>
+<h3>FC Canchungo</h3>
+<small>Canchungo</small>
+</div>
+
+<div class="club" data-name="Portos de Bissau" onclick="openProfile('Portos de Bissau','⚓','Bissau')">
+<div class="club-logo">⚓</div>
+<h3>Portos de Bissau</h3>
+<small>Bissau</small>
+</div>
+
+<div class="club" data-name="Cupelum FC" onclick="openProfile('Cupelum FC','⚽','Bissau')">
+<div class="club-logo">⚽</div>
+<h3>Cupelum FC</h3>
+<small>Bissau</small>
+</div>
+
+<div class="club" data-name="Sport Bissau e Benfica" onclick="openProfile('Sport Bissau e Benfica','🔴','Bissau')">
+<div class="club-logo">🔴</div>
+<h3>Sport Bissau e Benfica</h3>
+<small>Bissau</small>
+</div>
+
+<div class="club" data-name="Sporting da Guiné-Bissau" onclick="openProfile('Sporting da Guiné-Bissau','🟢','Bissau')">
+<div class="club-logo">🟢</div>
+<h3>Sporting da Guiné-Bissau</h3>
+<small>Bissau</small>
+</div>
+
+<div class="club" data-name="UDIB" onclick="openProfile('UDIB','🔵','Bissau')">
+<div class="club-logo">🔵</div>
+<h3>UDIB</h3>
+<small>Bissau</small>
+</div>
+
+<div class="club" data-name="CDR Gabú" onclick="openProfile('CDR Gabú','⚽','Gabú')">
+<div class="club-logo">⚽</div>
+<h3>CDR Gabú</h3>
+<small>Gabú</small>
+</div>
+
+<div class="club" data-name="Háfia FC" onclick="openProfile('Háfia FC','⚽','Guiné-Bissau')">
+<div class="club-logo">⚽</div>
+<h3>Háfia FC</h3>
+<small>Guiné-Bissau</small>
+</div>
+
+<div class="club" data-name="Massaf SC" onclick="openProfile('Massaf SC','⚽','Guiné-Bissau')">
+<div class="club-logo">⚽</div>
+<h3>Massaf SC</h3>
+<small>Guiné-Bissau</small>
+</div>
+
+<div class="club" data-name="FC Cumura" onclick="openProfile('FC Cumura','⚽','Cumura')">
+<div class="club-logo">⚽</div>
+<h3>FC Cumura</h3>
+<small>Cumura</small>
+</div>
+
+<div class="club" data-name="Arado de Nhacra" onclick="openProfile('Arado de Nhacra','⚽','Nhacra')">
+<div class="club-logo">⚽</div>
+<h3>Arado de Nhacra</h3>
+<small>Nhacra</small>
+</div>
+
+<div class="club" data-name="FC Pelundo" onclick="openProfile('FC Pelundo','⚽','Pelundo')">
+<div class="club-logo">⚽</div>
+<h3>FC Pelundo</h3>
+<small>Pelundo</small>
+</div>
+
+<div class="club" data-name="Os Balantas de Mansôa" onclick="openProfile('Os Balantas de Mansôa','⚽','Mansôa')">
+<div class="club-logo">⚽</div>
+<h3>Os Balantas de Mansôa</h3>
+<small>Mansôa</small>
+</div>
+
+<div class="club" data-name="FC Cuntum" onclick="openProfile('FC Cuntum','⚽','Bissau')">
+<div class="club-logo">⚽</div>
+<h3>FC Cuntum</h3>
+<small>Bissau</small>
+</div>
+
+<div class="club" data-name="Flamengo de Pefine" onclick="openProfile('Flamengo de Pefine','🔴','Pefine')">
+<div class="club-logo">🔴</div>
+<h3>Flamengo de Pefine</h3>
+<small>Pefine</small>
+</div>
+
+<div class="club" data-name="FC Tigre de Fronteira" onclick="openProfile('FC Tigre de Fronteira','🐯','Guiné-Bissau')">
+<div class="club-logo">🐯</div>
+<h3>FC Tigre de Fronteira</h3>
+<small>Guiné-Bissau</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PERFIL DO CLUBE -->
+
+<section id="profile" class="profile">
+
+<div class="profile-header">
+
+<button class="back" onclick="closeProfile()">
+← Voltar aos clubes
+</button>
+
+<div style="height:15px"></div>
+
+<div class="profile-logo" id="profileLogo">
+⚽
+</div>
+
+<h2 id="profileName">
+Clube
+</h2>
+
+<p id="profileLocation">
+🇬🇼 Guiné-Bissau
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>📊 Resumo</h2>
+
+<div class="profile-stats">
+
+<div class="profile-stat">
+<strong id="profilePosition">—</strong>
+Posição
+</div>
+
+<div class="profile-stat">
+<strong id="profilePoints">—</strong>
+Pontos
+</div>
+
+<div class="profile-stat">
+<strong>⚽</strong>
+Jogos
+</div>
+
+<div class="profile-stat">
+<strong>🏆</strong>
+Títulos
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>ℹ️ Informações</h2>
+
+<div class="info-row">
+<span>📍 Região</span>
+<strong id="infoRegion">A confirmar</strong>
+</div>
+
+<div class="info-row">
+<span>🏟️ Estádio</span>
+<strong>A confirmar</strong>
+</div>
+
+<div class="info-row">
+<span>👨‍🏫 Treinador</span>
+<strong>A confirmar</strong>
+</div>
+
+<div class="info-row">
+<span>🏆 Títulos</span>
+<strong>A confirmar</strong>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>👥 Plantel</h2>
+
+<div class="squad">
+
+<div class="player">
+<div class="player-number">01</div>
+Jogador a confirmar
+</div>
+
+<div class="player">
+<div class="player-number">02</div>
+Jogador a confirmar
+</div>
+
+<div class="player">
+<div class="player-number">03</div>
+Jogador a confirmar
+</div>
+
+<div class="player">
+<div class="player-number">04</div>
+Jogador a confirmar
+</div>
+
+</div>
+
+<p>
+<small>
+Os nomes dos jogadores serão adicionados quando os dados forem confirmados.
+</small>
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>⚽ Jogos do clube</h2>
+
+<div class="match">
+
+<div class="team" id="matchTeam">
+Clube
+</div>
+
+<div class="score">
+VS
+</div>
+
+<div class="team">
+Adversário
+</div>
+
+</div>
+
+<p>
+<small>Calendário a confirmar.</small>
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>📰 Notícias do clube</h2>
+
+<p>
+Ainda não existem notícias cadastradas para este clube.
+</p>
+
+<button class="btn">
+📰 Ver notícias
+</button>
+
+</div>
+
+</section>
+
+
+<!-- JOGOS -->
+
+<section id="jogos">
+
+<div class="card">
+
+<h2>⚽ Jogos</h2>
+
+<div class="match">
+
+<div class="team">
+FC Canchungo
+</div>
+
+<div class="score">
+VS
+</div>
+
+<div class="team">
+Portos de Bissau
+</div>
+
+</div>
+
+<div class="match">
+
+<div class="team">
+Cupelum FC
+</div>
+
+<div class="score">
+VS
+</div>
+
+<div class="team">
+CDR Gabú
+</div>
+
+</div>
+
+<div class="match">
+
+<div class="team">
+UDIB
+</div>
+
+<div class="score">
+VS
+</div>
+
+<div class="team">
+Massaf SC
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ARTILHEIROS -->
+
+<section id="artilheiros">
+
+<div class="card">
+
+<h2>👑 Artilheiros</h2>
+
+<p>🥇 Alimo Djaló — 20 golos</p>
+
+<p>🥈 Ahamed Camará — 16 golos</p>
+
+<p>🥉 Abubacar Soumah — 16 golos</p>
+
+</div>
+
+</section>
+
+
+<!-- NOTÍCIAS -->
+
+<section id="noticias">
+
+<div class="card">
+
+<h2>📰 Notícias</h2>
+
+<div class="news-grid">
+
+<div class="news">
+
+<div class="news-img">🇬🇼</div>
+
+<div class="news-content">
+
+<h3>Futebol guineense</h3>
+
+<p>
+Principais informações do futebol nacional.
+</p>
+
+</div>
+
+</div>
+
+<div class="news">
+
+<div class="news-img">⚽</div>
+
+<div class="news-content">
+
+<h3>Clubes</h3>
+
+<p>
+Informações sobre clubes e jogadores.
+</p>
+
+</div>
+
+</div>
+
+<div class="news">
+
+<div class="news-img">🏆</div>
+
+<div class="news-content">
+
+<h3>Campeonato</h3>
+
+<p>
+Resultados e competições.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HISTÓRIA -->
+
+<section id="historia">
+
+<div class="card">
+
+<h2>📚 História</h2>
+
+<p>
+O TFG pretende preservar e organizar a história
+do futebol da Guiné-Bissau.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SOBRE -->
+
+<section id="sobre">
+
+<div class="card">
+
+<h2>ℹ️ Sobre o TFG</h2>
+
+<h3>TFG — Tudo Sobre Futebol Guineense</h3>
+
+<p>
+Plataforma dedicada ao futebol da Guiné-Bissau.
+</p>
+
+<p>
+<strong>Criador e Diretor:</strong><br>
+Cristóvão Mendes
+</p>
+
+<button class="btn" onclick="shareTFG()">
+📤 Partilhar TFG
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- BARRA INFERIOR -->
+
+<div class="bottom-nav">
+
+<a href="#inicio" class="active">
+<span>🏠</span>
+Início
+</a>
+
+<a href="#liga">
+<span>🏆</span>
+Liga
+</a>
+
+<a href="#jogos">
+<span>⚽</span>
+Jogos
+</a>
+
+<a href="#clubes">
+<span>👥</span>
+Clubes
+</a>
+
+<a href="#" onclick="openMenu();return false">
+<span>☰</span>
+Mais
+</a>
+
+</div>
+
+
+<footer>
+
+<h3>⚽ TFG PRO 8.2 🇬🇼</h3>
+
+<p>Tudo Sobre Futebol Guineense</p>
+
+<p>Fundador e Diretor: Cristóvão Mendes</p>
+
+<p>© 2026 TFG</p>
+
+</footer>
+
+
+<script>
+
+/* MENU */
+
+function openMenu(){
+
+document
+.getElementById("sideMenu")
+.classList.add("open");
+
+document
+.getElementById("overlay")
+.style.display="block";
+
+}
+
+function closeMenu(){
+
+document
+.getElementById("sideMenu")
+.classList.remove("open");
+
+document
+.getElementById("overlay")
+.style.display="none";
+
+}
+
+
+/* PERFIL DOS CLUBES */
+
+function openProfile(name,logo,location){
+
+document
+.getElementById("clubes")
+.style.display="none";
+
+document
+.getElementById("profile")
+.style.display="block";
+
+document
+.getElementById("profileName")
+innerText=name;
+
+document
+.getElementById("profileLogo")
+innerText=logo;
+
+document
+.getElementById("profileLocation")
+innerText="📍 "+location;
+
+document
+.getElementById("infoRegion")
+innerText=location;
+
+document
+.getElementById("matchTeam")
+innerText=name;
+
+
+/* PONTOS */
+
+let points={
+"FC Canchungo":"63",
+"Portos de Bissau":"59",
+"Cupelum FC":"58",
+"CDR Gabú":"51",
+"Sport Bissau e Benfica":"46",
+"Massaf SC":"43",
+"Sporting da Guiné-Bissau":"39",
+"UDIB":"38"
+};
+
+let positions={
+"FC Canchungo":"1º",
+"Portos de Bissau":"2º",
+"Cupelum FC":"3º",
+"CDR Gabú":"4º",
+"Sport Bissau e Benfica":"5º",
+"Massaf SC":"6º",
+"Sporting da Guiné-Bissau":"7º",
+"UDIB":"8º"
+};
+
+document
+.getElementById("profilePoints")
+.innerText=points[name] || "—";
+
+document
+.getElementById("profilePosition")
+.innerText=positions[name] || "—";
+
+window.scrollTo({
+top:document.getElementById("profile").offsetTop-70,
+behavior:"smooth"
+});
+
+}
+
+
+/* FECHAR PERFIL */
+
+function closeProfile(){
+
+document
+.getElementById("profile")
+.style.display="none";
+
+document
+.getElementById("clubes")
+.style.display="block";
+
+document
+.getElementById("clubes")
+.scrollIntoView();
+
+}
+
+
+/* PESQUISA */
+
+function searchClubs(){
+
+let value=
+document
+.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+document
+.querySelectorAll(".club")
+.forEach(function(club){
+
+let name=
+club
+.getAttribute("data-name")
+.toLowerCase();
+
+if(name.includes(value)){
+
+club.classList.remove("hidden");
+
+}else{
+
+club.classList.add("hidden");
+
+}
+
+});
+
+if(value){
+
+document
+.getElementById("clubes")
+.scrollIntoView();
+
+}
+
+}
+
+
+/* PARTILHAR */
+
+function shareTFG(){
+
+if(navigator.share){
+
+navigator.share({
+
+title:"TFG PRO 8.2",
+
+text:"Tudo Sobre Futebol Guineense 🇬🇼⚽",
+
+url:window.location.href
+
+});
+
+}else{
+
+alert(
+"Copie o endereço desta página para partilhar o TFG."
+);
+
+}
+
+}
+
+
+/* NAVEGAÇÃO ATIVA */
+
+let sections=
+document.querySelectorAll("section");
+
+let links=
+document.querySelectorAll(".bottom-nav a");
+
+window.addEventListener("scroll",function(){
+
+let current="";
+
+sections.forEach(function(section){
+
+if(
+scrollY >= section.offsetTop-120
+){
+
+current=section.id;
+
+}
+
+});
+
+links.forEach(function(link){
+
+link.classList.remove("active");
+
+if(
+link.getAttribute("href")==="#"+current
+){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+    </html>
